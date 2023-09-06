@@ -28,7 +28,7 @@ This function returns the derivative $f'_m(\phi)$ for given $N$, $\chi$, and $\p
 
 ## def plot_mixing_free_energy($N$)
 
-For given $N$, this routine plots the function $f_m(\phi)$ versus $\phi$ for $\chi=\{0,0.1,0.2,0.5\}$ (use different colors for different $\chi$, add axis labels and a legend). Save the graphics file in png, pdf, or jpg format.
+For given $N$, this routine plots the mixing free energy density $f_m(\phi)$ versus $\phi$ for $\chi=\{0,0.1,0.2,0.5\}$ (use different colors for different $\chi$, add axis labels and a legend). Save the graphics file in png, pdf, or jpg format.
 
 ## def common_tangent($N,\chi$)
 
@@ -66,7 +66,7 @@ $\chi_c=\frac{1}{2} \left(1+\frac{1}{\sqrt{N}}\right)^2$
 
 ## Application 5 (advanced)
 
-Thermo-responsive PNIPAM polymers and their brushes (set $N\rightarrow \infty$, i.e., ignore the first term in $f_m(\phi)$) have been modeled [2] using a $\phi$-and $T$-dependent $\chi$-parameter of the form
+Thermo-responsive PNIPAM polymers and their brushes (set $N\rightarrow \infty$, i.e., ignore the first term in the mixing free energy density) have been modeled [2] using a $\phi$-and $T$-dependent $\chi$-parameter of the form
 
 $\chi = -12.947 + 0.044959 \ T/{\rm K} + 17.92 \ \phi - 0.056944 \ \phi T/{\rm K} + 14.814 \ \phi^2 - 0.051419 \ \phi^2 T/{\rm K}$
 
