@@ -16,11 +16,15 @@ The phase diagram resulting from $f_m$ is the solution to the following two bino
 
 $f_m'(\phi_a) = f_m'(\phi_b) = \frac{f_m(\phi_b)-f_m(\phi_a)}{\phi_b-\phi_a}$
 
-for two unknowns $\phi_a$ and $\phi_b$. To be more specific, for a given $N$, $\Theta$, and temperature $T$, one is seeking for a solution to the binodal equation. If it has two solutions, there are two volume fractions $\phi_a$ and $\phi_b$ that coexist; the system is phase-separated. If the binodal equations have no solution, the system is homogeneous and not phase-separated. At the so-called critical point, it just has one solution. The binodal equations have a graphical ('common tangent') interpretation: Their two solutions, if they exist, can be connected by a line that is tangential to $f_m(\phi)$ at both $\phi=\phi_a$ and $\phi=\phi_b$.
+for two unknowns $\phi_a$ and $\phi_b\ge \phi_a$. The prime denotes a derivative with respect to $\phi$. To be more specific, for a given $N$, $\Theta$, and temperature $T$, one is seeking for a solution to the binodal equation. If it has two solutions, there are two volume fractions $\phi_a$ and $\phi_b$ that coexist; the system is phase-separated. If the binodal equations have no solution, the system is homogeneous and not phase-separated. At the so-called critical point, it just has one solution. The binodal equations have a graphical ('common tangent') interpretation: Their two solutions, if they exist, can be connected by a line that is tangential to $f_m(\phi)$ at both $\phi=\phi_a$ and $\phi=\phi_b$.
 
 ## def fm($N,\chi,\phi$)
 
-This function returns $f_m(\phi)$ for given $N$ and $\chi$.
+This function returns $f_m(\phi)$ for given $N$, $\chi$, and $\phi$.
+
+## def fmprime($N,\chi,\phi$)
+
+This function returns the derivative $f'_m(\phi)$ for given $N$, $\chi$, and $\phi$. Hint: You can choose if you calculate the derivative analytically, or if you approximate it numerically. 
 
 ## def plot_mixing_free_energy($N$)
 
@@ -28,11 +32,11 @@ For given $N$, this routine plots the function $f_m(\phi)$ versus $\phi$ for $\c
 
 ## def common_tangent($N,\chi$)
 
-For given $N$ and $\chi$, this routine finds the 0, 1, or 2 volume fractions ($\phi_a$, $\phi_b$) that solve the binodal equations. It returns the number of different solutions and their values. 
+For given $N$ and $\chi$, this routine finds the 0, 1, or 2 volume fractions ($\phi_a$, $\phi_b$) that solve the binodal equations. It returns the number of different solutions and their values. Hint: During developing such algorithm, it is useful to plot $f_m(\phi)$ together with the obtained solution(s) to see, if the line connecting the solution is indeed a common tangent. To obtain a precise estimate, it could also make sense to first scan over volume fractions using a low resolution, and afterwards increase the solution.
 
 ## def calculate_phase_diagram($N,\Theta$)
 
-For given $N$ and $\Theta$ (in units of Kelvin), use the common_tangent routine to find the solutions of the binodal equations for temperatures $T$ in the range between $0$ and $2\Theta$ and save the values in an ascii file (txt or csv-format) with up to four columns: the first column carries $T$, the second column the number of solutions, the following column the values of these solutions.
+For given $N$ and $\Theta$ (in units of Kelvin), use the common_tangent routine to find the solutions of the binodal equations for temperatures $T$ in the range between $0$ and $2\Theta$ (in 1 K steps or smaller) and save the values in an ascii file (txt or csv-format) with up to four columns: the first column carries $T$, the second column the number of solutions, the following column the values of these solutions.
 
 ## def plot_phase_diagram
 
@@ -48,7 +52,7 @@ For $N=100$ and $\Theta=400$ K, plot the phase diagram, and vary $T$ in the rang
 
 ## Application 3
 
-For $\Theta=400$, plot the phase diagrams for $N=50, 100, 200, 1000$ into a single figure (add axis labels, legend, different colors for different $N$), save figure as graphics file).
+For $\Theta=400$, plot the phase diagrams for $N=50, 100, 200, 1000$ into a single figure (add axis labels, legend, different colors for different $N$, save figure as graphics file).
 
 ## Application 4
 
@@ -56,11 +60,23 @@ For $N=100$ and $\Theta=400$ K, find the critical temperature $T_c$ and correspo
 
 $\phi_c=\frac{1}{1+\sqrt{N}}$
 
-and 
+and $T_c=\Theta/2\chi_c$ with 
 
 $\chi_c=\frac{1}{2} \left(1+\frac{1}{\sqrt{N}}\right)^2$
 
+## Application 5 (advanced)
+
+Thermo-responsive PNIPAM polymers and their brushes (set $N\rightarrow \infty$, i.e., ignore the first term in $f_m(\phi)$) have been modeled [2] using a $\phi$-and $T$-dependent $\chi$-parameter of the form
+
+$\chi = -12.947 + 0.044959 \ T/{\rm K} + 17.92 \ \phi - 0.056944 \ \phi T/{\rm K} + 14.814 \ \phi^2 - 0.051419 \ \phi^2 T/{\rm K}$
+
+Ignore the first term in the mixing free energy ($N\rightarrow \infty$), and caculate and plot the phase diagram for a PNIPAM brush. Hint: You should find a critical point at $T_c\approx 288.4$ K.
+
+
+
 
 [1] M. Doi, Introduction to Polymer Physics, Clarendon Press Oxford, U.K., 2006. 
+
+[2] http://dx.doi.org/10.1016/j.biomaterials.2012.03.060
  
 
