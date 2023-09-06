@@ -22,7 +22,7 @@ for two unknowns $\phi_a$ and $\phi_b\ge \phi_a$. The prime denotes a derivative
 
 This function returns $f_m(\phi)$ for given $N$, $\chi$, and $\phi$.
 
-## def fmprime($N,\chi,\phi$)
+## def derivfm($N,\chi,\phi$)
 
 This function returns the derivative $f'_m(\phi)$ for given $N$, $\chi$, and $\phi$. Hint: You can choose if you calculate the derivative analytically, or if you approximate it numerically. 
 
