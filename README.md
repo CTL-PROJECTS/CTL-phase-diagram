@@ -18,6 +18,10 @@ $f_m'(\phi_a) = f_m'(\phi_b) = \frac{f_m(\phi_b)-f_m(\phi_a)}{\phi_b-\phi_a}$
 
 for two unknowns $\phi_a$ and $\phi_b$. To be more specific, for a given $N$, $\Theta$, and temperature $T$, one is seeking for a solution to the binodal equation. If it has two solutions, there are two volume fractions $\phi_a$ and $\phi_b$ that coexist; the system is phase-separated. If the binodal equations have no solution, the system is homogeneous and not phase-separated. At the so-called critical point, it just has one solution. The binodal equations have a graphical ('common tangent') interpretation: Their two solutions, if they exist, can be connected by a line that is tangential to $f_m(\phi)$ at both $\phi=\phi_a$ and $\phi=\phi_b$.
 
+## def fm($N,\phi$)
+
+This function returns $f_m(\phi)$ for given $N$.
+
 ## def plot_mixing_free_energy($N$)
 
 For given $N$, this routine plots the function $f_m(\phi)$ versus $\phi$ for $\chi=\{0,0.1,0.2,0.5\}$ (use different colors for different $\chi$, add axis labels and a legend). Save the graphics file in png, pdf, or jpg format.
