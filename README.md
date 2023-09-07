@@ -48,7 +48,7 @@ For given $N$ and $\chi$, this routine finds the 0, 1, or 2 volume fractions ($\
 
 ## def calculate_phase_diagram($N,\Theta$)
 
-For given $N$ and $\Theta$ (in units of Kelvin), use the find_binodal routine to find the solutions of the binodal equations for temperatures $T$ in the range between $0$ and $2\Theta$ (in 1 K steps or smaller) and save the values in an ascii file (txt or csv-format) with up to four columns: the first column carries $T$, the second column the number of solutions, the following columns the values of these solutions. Hint: It could be convenient to add another column to this file, a number that says how well the binodal equations are fulfilled. An analogous routine should be added for the spinodal. 
+For given $N$ and $\Theta$ (in units of Kelvin), use the find_binodal routine to find the solutions of the binodal equations for temperatures $T$ in the range between $0$ and $2\Theta$ (in 1 K steps or smaller) and save the values in an ascii file (txt or csv-format) with up to four columns: the first column carries $T$, the second column the number of solutions, the following columns the values of these solutions. Hint: It could be convenient to add another column to this file, a number that says how well the binodal equations are fulfilled. An analogous routine should be added for the spinodal.  
 
 ## def plot_phase_diagram
 
