@@ -62,7 +62,7 @@ Plot the mixing free energy and create a graphics file using plot_mixing_free_en
 
 For $N=100$ and $\Theta=400$ K, plot the phase diagram. Plot temperature versus the solutions of the binodal equations (solid lines) and spinodal equations (dashed lines) to obtain the so-called phase diagram. The region enclosed by the two binodal $\phi_a$ and $\phi_b$ is the coexistence region, outside this region the system does not exhibit phase separation and remains homogeneous. 
 
-## Application 3
+## Application 3 
 
 For $\Theta=400$, plot the phase diagrams for different polymerization degrees $N=50, 100, 200, 1000$ into a single figure (add axis labels, legend, different colors for different $N$, save figure as graphics file).
 
