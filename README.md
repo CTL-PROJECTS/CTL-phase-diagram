@@ -26,29 +26,29 @@ Solving these equations is usually much simpler than solving the binodal equatio
 
 Please use the following functions to structure your code. The functions are followed by tasks.  
 
-## def fm($N,\chi,\phi$)
+## def fm(*N,chi,phi*)
 
-This function returns $f_m(\phi)$ for given $N$, $\chi$, and $\phi$.
+This function returns $f_m(\phi)$ for given $N$, $\chi$ (chi), and $\phi$ (phi).
 
-## def derivfm($N,\chi,\phi$)
+## def derivfm(*N,chi,phi*)
 
 This function returns the derivative $f'_m(\phi)$ for given $N$, $\chi$, and $\phi$. Hint: You can choose if you calculate the derivative analytically (symbolically), or if you approximate it numerically. 
 
-## def plot_mixing_free_energy($N$)
+## def plot_mixing_free_energy(*N*)
 
 For given $N$, this routine plots the mixing free energy density $f_m(\phi)$ versus $\phi$ for $\chi=\{0,0.1,0.2,0.5\}$ (use different colors for different $\chi$, add axis labels and a legend). Save the graphics file in png, pdf, or jpg format.
 
-## def find_spinodal($N,\chi$)
+## def find_spinodal(*N,chi*)
 
 For given $N$ and $\chi$, this routine finds the 0, 1, or 2 volume fractions ($\phi_a^{(s)}$, $\phi_b^{(s)}$) that solve the spinodal equations. It returns the number of different solutions and their values. Hint: During developing such algorithm, it is useful to plot $f'_m(\phi)$ together with the obtained solution(s) to see, if the solutions are indeed extrema of this function. The goal is to obtain volume fractions whose error is below 0.001. 
 
-## def find_binodal($N,\chi$)
+## def find_binodal(*N,chi*)
 
 For given $N$ and $\chi$, this routine finds the 0, 1, or 2 volume fractions ($\phi_a$, $\phi_b$) that solve the binodal equations. It returns the number of different solutions and their values. Hint: During developing such algorithm, it is useful to plot $f_m(\phi)$ together with the obtained solution(s) to see, if the line connecting the solution is indeed a common tangent. To obtain a precise estimate, it could also make sense to first scan over volume fractions using a low resolution, and afterwards increase the solution.
 
-## def calculate_phase_diagram($N,\Theta$)
+## def calculate_phase_diagram(*N,Theta*)
 
-For given $N$ and $\Theta$ (in units of Kelvin), use the find_binodal routine to find the solutions of the binodal equations for temperatures $T$ in the range between $0$ and $2\Theta$ (in 1 K steps or smaller) and save the values in an ascii file (txt or csv-format) with up to four columns: the first column carries $T$, the second column the number of solutions, the following columns the values of these solutions. Hint: It could be convenient to add another column to this file, a number that says how well the binodal equations are fulfilled. An analogous routine should be added for the spinodal.  
+For given $N$ and $\Theta$ (Theta) (in units of Kelvin), use the find_binodal routine to find the solutions of the binodal equations for temperatures $T$ in the range between $0$ and $2\Theta$ (in 1 K steps or smaller) and save the values in an ascii file (txt or csv-format) with up to four columns: the first column carries $T$, the second column the number of solutions, the following columns the values of these solutions. Hint: It could be convenient to add another column to this file, a number that says how well the binodal equations are fulfilled. An analogous routine should be added for the spinodal.  
 
 ## def plot_phase_diagram
 
